@@ -1,0 +1,32 @@
+<!-- <table sortable-table (sorted)="onSorted($event)"> -->
+<table>
+  <thead>
+    <!-- <tr>
+      <th sortable-column="id" sort-direction="asc">Id</th>
+      <th sortable-column="firstname">Nom</th>
+      <th sortable-column="lastname">Prénom</th>
+      <th sortable-column="lastname">Téléphone</th>
+      <th sortable-column="lastname">Email</th>
+      <th colspan="2">Action</th>
+    </tr> -->
+    <tr>
+      <th>Id</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Téléphone</th>
+      <th>Email</th>
+      <th colspan="2">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let etatCivil of etatsCivils?.content">
+      <td>{{ etatCivil.id }}</td>
+      <td>{{ etatCivil.nom }}</td>
+      <td>{{ etatCivil.prenom }}</td>
+      <td>{{ etatCivil.telephone }}</td>
+      <td>{{ etatCivil.email }}</td>
+      <td><button name="modifier" class="btn btn-primary" (click)="onEdit(etatCivil.id)">Modifier</button></td>
+      <td><button name="delete" class="btn btn-primary" (click)="onDelete(etatCivil)">Supprimer</button></td>
+    </tr>
+  </tbody>
+</table>
